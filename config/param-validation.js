@@ -20,6 +20,25 @@ module.exports = {
     }
   },
 
+  // POST /api/users
+  createArticle: {
+    body: {
+      articleTitle: Joi.string().required(),
+      articleContent: Joi.string().required()
+    }
+  },
+
+  // UPDATE /api/users/:articleId
+  updateArticle: {
+    body: {
+      articleTitle: Joi.string().required(),
+      articleContent: Joi.string().required()
+    },
+    params: {
+      articleId: Joi.string().hex().required()
+    }
+  },
+
   // POST /api/auth/login
   login: {
     body: {

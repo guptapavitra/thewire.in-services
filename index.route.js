@@ -1,6 +1,7 @@
 const express = require('express');
-const userRoutes = require('./server/user/user.route');
+// const userRoutes = require('./server/user/user.route');
 const authRoutes = require('./server/auth/auth.route');
+const articleRoutes = require('./server/article/article.route');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -12,7 +13,9 @@ router.get('/health-check', (req, res) =>
 );
 
 // mount user routes at /users
-router.use('/users', userRoutes);
+// router.use('/users', userRoutes);
+// mount user routes at /articles
+router.use('/articles', articleRoutes);
 
 // mount auth routes at /auth
 router.use('/auth', authRoutes);
